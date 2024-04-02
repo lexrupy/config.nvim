@@ -1,4 +1,3 @@
-require "config.settings"
-require "config.remap"
-require "config.ntrwcfg"
-require "plugins"
+require("config.settings")
+require("config.remap")
+require("plugins")
