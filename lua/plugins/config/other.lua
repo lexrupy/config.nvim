@@ -2,7 +2,6 @@ return {
   { "nvim-lua/plenary.nvim" },
   { "lewis6991/gitsigns.nvim" },
   { "JoosepAlviste/nvim-ts-context-commentstring" },
-  { "folke/which-key.nvim",                       event = "VeryLazy" },
   { "kylechui/nvim-surround",                     event = "VeryLazy" },
   {
     "numToStr/Comment.nvim",
