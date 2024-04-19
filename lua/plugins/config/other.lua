@@ -1,6 +1,5 @@
 return {
   { "nvim-lua/plenary.nvim" },
-  { "lewis6991/gitsigns.nvim" },
   { "JoosepAlviste/nvim-ts-context-commentstring" },
   { "kylechui/nvim-surround",                     event = "VeryLazy" },
   {
@@ -17,7 +16,6 @@ return {
     },
   },
 
-  { "tpope/vim-fugitive", lazy = false },
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`

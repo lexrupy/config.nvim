@@ -31,3 +31,14 @@ vim.api.nvim_command([[
     autocmd FileType qf nnoremap <buffer><silent><esc> :cclose<CR>
     autocmd FileType help nnoremap <buffer><silent><esc> :bd<cr>
 ]])
+
+
+function _G.set_terminal_keymaps()
+  local opts = {buffer = 0}
+  vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+  vim.keymap.set('n', '<esc>', [[<cmd>close<cr>]], opts)
+end
+
+-- if you only want these mappings for toggle term use term://*toggleterm#* instead
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+vim.cmd("autocmd BufEnter * if &buftype ==# 'terminal' | startinsert! | endif")

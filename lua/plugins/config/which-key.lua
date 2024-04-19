@@ -13,10 +13,11 @@ return { -- Useful plugin to show you pending keybinds.
     -- Document existing key chains
     require('which-key').register {
       ['<leader>b'] = { name = 'Buffers', _ = 'which_key_ignore' },
-      ['<leader>l'] = { name = 'Lsp', _ = 'which_key_ignore' },
       ['<leader>d'] = { name = 'Debugger', _ = 'which_key_ignore' },
-      ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
       ['<leader>f'] = { name = 'Find', _ = 'which_key_ignore' },
+      ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
+      ['<leader>l'] = { name = 'Lsp', _ = 'which_key_ignore' },
+      ['<leader>o'] = { name = 'Open...', _ = 'which_key_ignore' },
       ['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
     }
   end,

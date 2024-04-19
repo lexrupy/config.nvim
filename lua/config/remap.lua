@@ -1,5 +1,3 @@
--- Set leader key to <space>
-vim.g.mapleader = " "
 
 -- Remap ç to something useful on pt-BR Keyboards
 vim.keymap.set("n", "Ç", ":")
@@ -52,8 +50,27 @@ vim.keymap.set('n', '<leader>f.', "<cmd>Telescope oldfiles<cr>", { desc = 'Find 
 vim.keymap.set('n', '<leader><leader>', "<cmd>Telescope buffers<cr>", { desc = 'Find existing buffers' })
 
 
+-- ToggleTerm Stuff
 
--- Lua
+vim.keymap.set('n', '<leader>ot', "<cmd>2ToggleTerm direction=float dir=git_dir name=Terminal<cr>", { desc = 'Open a floating terminal' })
+vim.keymap.set('n', '<leader>oh', "<cmd>1ToggleTerm direction=horizontal name=Terminal<cr>", { desc = 'Open a horizontal terminal' })
+
+-- Git
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", dir = "git_dir", direction = "float" })
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.keymap.set("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>gh', "<cmd>Gitsigns preview_hunk<cr>", { desc = "Preview hunk" })
+vim.keymap.set('n', '<leader>gn', "<cmd>Gitsigns next_hunk<cr>", { desc = "Go to next hunk" })
+vim.keymap.set('n', '<leader>gp', "<cmd>Gitsigns previous_hunk<cr>", { desc = "Go to previous hunk" })
+vim.keymap.set('n', '<leader>gl', "<cmd>Gitsigns blame_line<cr>", { desc = "Preview hunk" })
+vim.keymap.set('n', '<leader>gsh', "<cmd>Gitsigns stage_hunk<cr>", { desc = "Stage hunk" })
+vim.keymap.set('n', '<leader>gl', "<cmd>Gitsigns blame_line<cr>", { desc = "Blame line" })
+
+-- Diagnostics
 vim.keymap.set("n", "<leader>xx", "<cmd>Trouble<CR>")
 vim.keymap.set("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>")
 vim.keymap.set("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>")

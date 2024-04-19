@@ -1,4 +1,8 @@
-require("config.settings")
-require("config.remap")
-require("config.autocmds")
+-- Set leader key to <space>
+vim.g.mapleader = " "
+
 require("plugins")
+require("config.settings")
+require("config.autocmds")
+require("config.remap")
+
