@@ -1,27 +1,38 @@
 -- the colorscheme should be available when starting Neovim
 return {
-  "catppuccin/nvim",
-  priority = 1000, -- Make sure to load this before all the other start plugins.
-  config = function()
-    return {
-      integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        treesitter = true,
-        notify = false,
-        mini = {
-          enabled = true,
-          indentscope_color = "",
-        },
-      },
-    }
-  end,
+"lunarvim/lunar.nvim",
+
   init = function()
-    vim.cmd.colorscheme("catppuccin")
+    vim.cmd.colorscheme("lunar")
     vim.cmd.hi("Comment gui=none")
   end,
 }
+-- return {
+--   "catppuccin/nvim",
+--   priority = 1000, -- Make sure to load this before all the other start plugins.
+--   config = function()
+--     return {
+--       integrations = {
+--         cmp = true,
+--         gitsigns = true,
+--         nvimtree = true,
+--         treesitter = true,
+--         notify = false,
+--         mini = {
+--           enabled = true,
+--           indentscope_color = "",
+--         },
+--       },
+--     }
+--   end,
+--   init = function()
+--     vim.cmd.colorscheme("catppuccin")
+--     vim.cmd.hi("Comment gui=none")
+--   end,
+-- }
+
+
+
 -- return {
 --   "lexrupy/doom-one.nvim",
 --   opts = function()
